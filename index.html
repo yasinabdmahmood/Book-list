@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script defer type="module" src="./main.js"></script>
 </head>
+
 <body>
-    <script type="module" src="./main.js"></script>
+    <div>
+        <h1>Awesome Books</h1>
+        <div id="book-list"></div>
+        <form>
+            <ul>
+                <li>
+                    <input id="title" type="text" placeholder="Title" required />
+                </li>
+                <li>
+                    <input id="author" type="text" placeholder="Author" required />
+                </li>
+                <li>
+                    <button id="add-button" type="button">Add</button>
+                </li>
+            </ul>
+        </form>
+        <hr />
+    </div>
 </body>
+
 </html>
