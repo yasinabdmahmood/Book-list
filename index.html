@@ -8,13 +8,28 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="page-wrapper">
-        <h1>All awesome books</h1>
+    <section class="page-wrapper">
+        <section class="header-wraper">
+            <nav class="nav-bar">
+                <span class="page-title">Awesome books</span>
+                <ul class="nav-bar-list">
+                    <li id="list">List</li>
+                    <li id="add-new">Add new</li>
+                    <li id="contact">Contact</li>
+                </ul>
+            </nav>
+        </section>
+        <div class="date-container">
+            <span id="date" class="date">Lorem ipsum dolor sit amet.</span>
+        </div>
+        <section id="list-s" class="List-of-books">
+            <h1>All awesome books</h1>
        <div id="book-list">
        
        </div>
-       <div class="hr"></div>
-       <h2>Add a new book</h2>
+        </section>
+       <section id="add-new-s" class="add-new-section">
+        <h2>Add a new book</h2>
         <form>
             <ul >
                 <li>
@@ -29,8 +44,27 @@
             </ul>
            
         </form>
-        <hr>
-    </div>
+       </section>
+       <section id="contact-s" class="contact-information-section">
+        <h1>Contact information</h1>
+        <span>Do have any question or just want to say "Hello",
+            <br>you can reach out to us
+        </span>
+        <div>
+            <ul>
+                <li>Our email: <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">abd181103@gmail.com</a></li>
+                <li>Our phone number: +9647501109931</li>
+                <li>Our adress: 90210 Broadway Blvd</li>
+            </ul>
+        </div>
+       </section>
+       <section class="footer-wrapper">
+        <footer>
+            <span>Copy write   ...</span>
+        </footer>
+       </section>
+        
+    </section>
     <script type="module" src="./main.js"></script>
 </body>
 </html>
