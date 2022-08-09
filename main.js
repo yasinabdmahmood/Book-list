@@ -30,6 +30,7 @@ addButton.onclick = () => {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
   const div = document.createElement('div');
+  if(title===""||author===""){return }
   div.innerHTML = newBook(title, author);
   document.getElementById('book-list').appendChild(div);
 
@@ -46,7 +47,7 @@ addButton.onclick = () => {
   removeFunctionality();
 };
 
-/// //////Local storage ///////////////
+/////////Local storage ///////////////
 if (localStorage.getItem('book list') === null) {
   localStorage.setItem('book list', JSON.stringify([]));
 } else {
