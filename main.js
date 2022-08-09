@@ -1,6 +1,5 @@
 class BookList {
   constructor(id) {
-    
     this.id = id;
     this.addButton = document.getElementById(this.id);
     if (localStorage.getItem('book list') === null) {
@@ -9,7 +8,7 @@ class BookList {
       const bookLists = JSON.parse(localStorage.getItem('book list'));
       for (let i = 0; i < bookLists.length; i += 1) {
         const div = document.createElement('div');
-        div.setAttribute('class','book-wrapper');
+        div.setAttribute('class', 'book-wrapper');
         div.innerHTML = BookList.newBook(bookLists[i].title, bookLists[i].author);
         document.getElementById('book-list').appendChild(div);
         BookList.removeBook();
@@ -24,7 +23,7 @@ class BookList {
     if (title === '' || author === '') return;
     const div = document.createElement('div');
     div.innerHTML = BookList.newBook(title, author);
-    div.setAttribute('class','book-wrapper');
+    div.setAttribute('class', 'book-wrapper');
     document.getElementById('book-list').appendChild(div);
 
     // Add remove functionality to new added book
