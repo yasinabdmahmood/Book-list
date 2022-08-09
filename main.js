@@ -26,6 +26,11 @@ class BookList {
     div.setAttribute('class', 'book-wrapper');
     document.getElementById('book-list').appendChild(div);
 
+    /////remove  text from the form fields
+    document.getElementById('title').value="";
+    document.getElementById('author').value="";
+   
+
     // Add remove functionality to new added book
     BookList.removeBook();
     // important-->make sure to remove the text from both input fields
