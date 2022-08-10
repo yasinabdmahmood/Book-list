@@ -25,16 +25,12 @@ class BookList {
     div.innerHTML = BookList.newBook(title, author);
     div.setAttribute('class', 'book-wrapper');
     document.getElementById('book-list').appendChild(div);
-
-    /////remove  text from the form fields
-    document.getElementById('title').value="";
-    document.getElementById('author').value="";
-   
-
+    /// //remove  text from the form fields
+    document.getElementById('title').value = '';
+    document.getElementById('author').value = '';
     // Add remove functionality to new added book
     BookList.removeBook();
     // important-->make sure to remove the text from both input fields
-
     BookList.addNewBookToLocalStorage(title, author);
   }
 
@@ -50,7 +46,6 @@ class BookList {
     const title = e.target.previousElementSibling.previousElementSibling.innerHTML;
     const arr = JSON.parse(localStorage.getItem('book list'));
     const index = arr.findIndex((object) => object.title === title);
-
     arr.splice(index, 1);
     localStorage.setItem('book list', JSON.stringify(arr));
   }
@@ -72,8 +67,28 @@ class BookList {
     arr.push(book);
     localStorage.setItem('book list', JSON.stringify(arr));
   }
+
+  static display(id1, id2, id3) {
+    document.getElementById(`${id1}-s`).style.display = 'block';
+    document.getElementById(`${id2}-s`).style.display = 'none';
+    document.getElementById(`${id3}-s`).style.display = 'none';
+    document.getElementById(id1).style.color = 'red';
+    document.getElementById(id2).style.color = 'black';
+    document.getElementById(id3).style.color = 'black';
+  }
 }
-
 const myList = new BookList('add-button');
-
 myList.addButton.onclick = BookList.addBook;
+
+document.getElementById('list').onclick = () => {
+  BookList.display('list', 'add-new', 'contact');
+};
+document.getElementById('add-new').onclick = () => {
+  BookList.display('add-new', 'list', 'contact');
+};
+document.getElementById('contact').onclick = () => {
+  BookList.display('contact', 'add-new', 'list');
+};
+
+const d = new Date();
+document.getElementById('date').innerHTML = d;
