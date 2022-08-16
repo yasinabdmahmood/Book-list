@@ -1,4 +1,6 @@
-class BookList {
+import { removeBooks } from './removeBooks.js';
+
+export default class BookList {
   constructor(id) {
     this.id = id;
     this.addButton = document.getElementById(this.id);
@@ -11,7 +13,7 @@ class BookList {
         div.setAttribute('class', 'book-wrapper');
         div.innerHTML = BookList.newBook(bookLists[i].title, bookLists[i].author);
         document.getElementById('book-list').appendChild(div);
-        BookList.removeBook();
+        removeBooks();
       }
     }
   }
@@ -29,25 +31,9 @@ class BookList {
     document.getElementById('title').value = '';
     document.getElementById('author').value = '';
     // Add remove functionality to new added book
-    BookList.removeBook();
+    removeBooks();
     // important-->make sure to remove the text from both input fields
     BookList.addNewBookToLocalStorage(title, author);
-  }
-
-  static removeBook() {
-    const removeButton = document.getElementsByClassName('remove-book');
-    removeButton[removeButton.length - 1].onclick = (e) => {
-      BookList.removeBookFromLocalStorage(e);
-      e.target.parentNode.remove();
-    };
-  }
-
-  static removeBookFromLocalStorage(e) {
-    const title = e.target.previousElementSibling.previousElementSibling.innerHTML;
-    const arr = JSON.parse(localStorage.getItem('book list'));
-    const index = arr.findIndex((object) => `"${object.title}" by` === title);
-    arr.splice(index, 1);
-    localStorage.setItem('book list', JSON.stringify(arr));
   }
 
   static newBook(title, author) {
@@ -67,28 +53,4 @@ class BookList {
     arr.push(book);
     localStorage.setItem('book list', JSON.stringify(arr));
   }
-
-  static display(id1, id2, id3) {
-    document.getElementById(`${id1}-s`).style.display = 'block';
-    document.getElementById(`${id2}-s`).style.display = 'none';
-    document.getElementById(`${id3}-s`).style.display = 'none';
-    document.getElementById(id1).style.color = 'red';
-    document.getElementById(id2).style.color = 'black';
-    document.getElementById(id3).style.color = 'black';
-  }
 }
-const myList = new BookList('add-button');
-myList.addButton.onclick = BookList.addBook;
-
-document.getElementById('list').onclick = () => {
-  BookList.display('list', 'add-new', 'contact');
-};
-document.getElementById('add-new').onclick = () => {
-  BookList.display('add-new', 'list', 'contact');
-};
-document.getElementById('contact').onclick = () => {
-  BookList.display('contact', 'add-new', 'list');
-};
-
-const d = new Date();
-document.getElementById('date').innerHTML = d;

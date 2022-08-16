@@ -7,7 +7,7 @@ This project helps you keep the record of you favorate books , add new books and
 * html
 * css
 * linter
-* Javascript
+* Javascript in ES6
 
 ## Live Demo 
 
@@ -31,15 +31,11 @@ To get a local copy up and running follow these simple example steps.
 ### Install
 * Git 
 
-
-
-## Author1
-* GitHub: [yasinabdmahmood](https://github.com/yasinabdmahmood)
-* Twitter: [@YASEEN30093859](https://twitter.com/yasenabd7)
-
-## Author2
+## Author
 * GitHub: [@githubhandle](https://github.com/AbigiyaTY)
 * Twitter: [@twitterhandle](https://twitter.com/AbigiyaTY)
+* LinkedIn: [@LinkedIn](https://www.linkedin.com/in/abigiya-tadesse-6a0052234)
+
 
 
 ## 🤝 Contributing
